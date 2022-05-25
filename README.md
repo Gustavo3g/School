@@ -9,5 +9,6 @@
 
 ## Gerenciamento Escolar com laravel
 
-
+## RUN
+`COMPOSER INSTALL`
 
