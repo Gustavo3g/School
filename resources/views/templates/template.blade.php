@@ -9,7 +9,7 @@
     <!-- Scripts -->
     <script src="{{url('assets/bootstrap/js/bootstrap.min.js')}}" defer></script>
 
-    <title>Challenges</title>
+    <title>Gerenciamento Escolar</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

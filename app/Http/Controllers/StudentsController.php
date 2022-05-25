@@ -85,7 +85,7 @@ class StudentsController extends Controller
 
     public function update(Request $request, $id)
     {
-        dd($student = $this->student->find($id));
+
         $student = $this->student->find($id)->update([
             'name' => $request->get('name'),
             'cpf' => $request->get('cpf'),

@@ -3,9 +3,9 @@
 
 @section('content')
 
-    @if(session('success'))
-        <div class="alert alert-success align-items-center">
-            <p>{{session('success')}}</p>
+    @if(session('success') || session('error'))
+        <div class="alert @if(session('success'))alert-success @else alert-danger @endif  align-items-center">
+            <p>{{session('success') ?? session('error')}}</p>
         </div>
     @endif
 

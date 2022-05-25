@@ -16,7 +16,7 @@ class ClassesFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'school' => $this->faker->name(),
-            'series' => $this->faker->name('masculino|feminino|naobinario'),
+            'series' => $this->faker->name('1 ano|feminino|naobinario'),
             'year' => $this->faker->date('Y-m-d'),
         ];
     }
