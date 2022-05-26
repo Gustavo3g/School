@@ -9,11 +9,46 @@
 
 ## Gerenciamento Escolar com laravel
 
-## RUN
-`COMPOSER INSTALL`
+## INSTALE AS DEPENDÊNCIAS
+```
 
-`PHP ARTISAN SERVE`
+$ COMPOSER INSTALL
 
-`EDITE O ARQUIVO .ENV`
+```
 
-`PHP ARTISAN MIGRATE`
+## CRIAR/EDITAR O ARQUIVO .ENV
+```
+
+## touch .env
+
+```
+
+## RODE AS MIGRATIONS
+```
+
+PHP ARTISAN MIGRATE
+
+```
+
+## AGORA RODE
+```
+
+PHP ARTISAN SERVE
+
+```
+
+---
+
+## RODANDO AS FACTORYS
+```
+Essa factory irá criar junto com os estudantes os respectivos responsaveis por cada estudante.
+
+
+php artisan db:seed --class=StudentSeeder
+
+
+Essa factory irá criar as Turmas 
+
+php artisan db:seed --class=ClasseSeeder
+
+```

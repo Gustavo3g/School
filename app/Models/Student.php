@@ -11,7 +11,7 @@ class Student extends Model
 
     protected $table = 'students';
 
-    protected $fillable = ['name', 'cpf', 'birth_date', 'gender', 'gender', 'responsible_id'];
+    protected $fillable = ['name', 'cpf', 'birth_date', 'gender', 'gender', 'registered', 'responsible_id'];
 
     public function responsible(){
         return $this->belongsTo(Responsible::class,'responsible_id','id');

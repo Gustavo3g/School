@@ -11,23 +11,23 @@
 
     <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
-            <a href="{{route('classes.create')}}">
-                <button class="btn btn-primary mb-4 p-3">Criar Nova Turma</button>
-            </a>
+{{--            <a href="{{route('registered.create')}}">--}}
+{{--                <button class="btn btn-primary mb-4 p-3">Criar Nova Matricula</button>--}}
+{{--            </a>--}}
 
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
-                @if(!empty($classes))
-                    @foreach($classes as $classe)
+                @if(!empty($registereds))
+                    @foreach($registereds as $registered)
                         <div class="col mb-5">
                             <div class="card h-100">
-                                <spam><button class="btn btn-primary position-absolute">{{$classe['series'] }} Serie</button></spam>
+                                <spam><button class="btn btn-primary position-absolute">Matricula {{$registered['id'] }}</button></spam>
                                 <img class="card-img-top"
                                      src="https://img.freepik.com/vetores-gratis/classe-escola-ninguem-sala-de-aula-quadro-negro-mesa-cadeira-educacao-ilustracao_7081-2475.jpg?w=2000"
                                      alt="...">
                                 <div class="card-body p-4">
                                     <div class="text-center row">
-                                        <h5 class="fw-bolder">{{$classe['school']}}</h5>
+                                        <h5 class="fw-bolder">{{$registered['id']}}</h5>
                                         <br><br><br><br>
                                         <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#classModal{{$classe['id']}}">Ver Alunos matriculados</button>
                                         <a class="btn btn-outline-warning mt-4" href="{{route('classes.edit',$classe['id'])}}">Editar Classe<button hidden ></button></a>

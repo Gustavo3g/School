@@ -22,7 +22,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="/students">Alunos</a></li>
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="/classes">Turmas</a></li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/classes">Matriculas</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/registered">Matriculas</a></li>
             </ul>
             <i class="bi-cart-fill me-1"></i>
             <a target="_blank" href="https://github.com/Gustavo3g"><span

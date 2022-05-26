@@ -51,6 +51,7 @@ class StudentsController extends Controller
             'birth_date' => $request->get('birth_date'),
             'gender' => $request->get('gender'),
             'responsible_id' => $responsible->id,
+            'registered' => false
         ]);
 
         if ($responsible && $student) {

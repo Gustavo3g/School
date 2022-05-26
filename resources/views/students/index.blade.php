@@ -21,6 +21,7 @@
                     @foreach($students as $student)
                         <div class="col mb-5">
                             <div class="card h-100">
+                                <spam><button class="btn @if($student['registered_id'] == null) btn-danger @else btn-success @endif position-absolute">{{$student['registered_id'] == null ? 'Aluno não matriculado' : 'Aluno matriculado'}}</button></spam>
                                 <img class="card-img-top"
                                      src="@if($student['gender'] == 'masculino') https://i.pinimg.com/originals/56/42/4e/56424e8965a48dd88c476f6eeab68d9c.jpg @elseif($student['gender'] == 'feminino') https://i.pinimg.com/564x/da/b7/ca/dab7cab4389e272c1e7e778698ca928d--mariana-th-birthday.jpg @else https://i.pinimg.com/originals/00/8a/91/008a91a4df56160532aaf56549937a86.jpg @endif"
                                      alt="...">
@@ -28,8 +29,11 @@
                                     <div class="text-center row">
                                         <h5 class="fw-bolder">{{$student['name']}}</h5>
                                         <br><br><br><br>
-                                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#responsibleModal{{$student['id']}}">Responsável pelo Aluno</button>
-                                        <a class="btn btn-outline-warning mt-4" href="{{route('students.edit',$student['id'])}}">Editar Aluno<button hidden ></button></a>
+                                        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#responsibleModal{{$student['id']}}">Responsável pelo Aluno</button>
+                                        <a class="btn btn-warning mt-4" href="{{route('students.edit',$student['id'])}}">Editar Aluno<button hidden ></button></a>
+                                        @if($student['registered_id'] == null)
+                                            <a class="btn btn-success mt-4" href="{{route('registered.create',$student['id'])}}">Matricular Aluno<button hidden ></button></a>
+                                        @endif
 
 
                                     </div>
@@ -96,6 +100,26 @@
                 @endif
 
             </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
+
     </section>
 @endsection

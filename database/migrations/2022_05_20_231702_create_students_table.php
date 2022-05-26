@@ -19,7 +19,9 @@ class CreateStudentsTable extends Migration
             $table->string('cpf');
             $table->date('birth_date');
             $table->string('gender');
-            $table->foreignId('responsible_id')->references('id')->on('responsibles')->onDelete('cascade');
+            $table->string('disciplines')->nullable();
+            $table->boolean('registered_id')->nullable();
+            $table->foreignId('responsible_id')->references('id')->on('responsibles');
             $table->timestamps();
         });
     }

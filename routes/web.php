@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\ClassesController;
+use App\Http\Controllers\RegisteredsController;
 use App\Http\Controllers\StudentsController;
-use App\Http\Controllers\ResponsiblesControlller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,4 +22,10 @@ Route::get('/', function () {
 
 Route::resource('students', StudentsController::class);
 Route::resource('classes', ClassesController::class);
-Route::resource('responsibles', ResponsiblesControlller::class);
+
+Route::prefix('registered')->group(function (){
+    Route::get('/',[RegisteredsController::class, 'index'])->name('registered.index');
+    Route::get('/create/{id}',[RegisteredsController::class, 'create'])->name('registered.create');
+    Route::post('/store',[RegisteredsController::class, 'store'])->name('registered.store');
+});
+

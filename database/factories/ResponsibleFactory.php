@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ClassesFactory extends Factory
+class ResponsibleFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -13,11 +13,12 @@ class ClassesFactory extends Factory
      */
     public function definition()
     {
+        $gender = ['masculino', 'feminino', 'naobinario'];
         return [
             'name' => $this->faker->name(),
-            'school' => $this->faker->name(),
-            'series' => $this->faker->name('1 ano|feminino|naobinario'),
-            'year' => $this->faker->date('Y-m-d'),
+            'cpf' => $this->faker->numberBetween(11),
+            'birth_date' => $this->faker->date(),
+            'gender' => $gender[rand(0,2)]
         ];
     }
 }

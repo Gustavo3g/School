@@ -9,7 +9,7 @@ class Responsible extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','cpf','birth_date','gender'];
+    protected $fillable = ['name', 'cpf', 'birth_date', 'gender', 'created_at'];
 
     public function student(){
         return $this->hasMany(Student::class,'responsible_id','id');

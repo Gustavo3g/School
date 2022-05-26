@@ -13,12 +13,15 @@ class StudentFactory extends Factory
      */
     public function definition()
     {
+        $gender = ['masculino', 'feminino', 'naobinario'];
         return [
             'name' => $this->faker->name(),
-            'cpf' => $this->faker->numberBetween(12),
+            'cpf' => $this->faker->numberBetween(11),
             'birth_date' => $this->faker->date('Y-m-d'),
-            'gender' => $this->faker->name('masculino|feminino|naobinario'),
-            'responsible_id' => 1,
+            'gender' => $gender[rand(0,2)],
+            'disciplines' => null,
+            'registered_id' => null
+
         ];
     }
 }
